@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>[Your Name] - Senior Director & AI Innovator</title>
+   <style>
+       * {
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+       }
+
+```
+   body {
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+       line-height: 1.6;
+       color: #333;
+       background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+       min-height: 100vh;
+   }
+
+   .container {
+       max-width: 1200px;
+       margin: 0 auto;
+       padding: 0 20px;
+   }
+
+   .hero {
+       min-height: 100vh;
+       display: flex;
+       align-items: center;
+       color: white;
+       text-align: center;
+       position: relative;
+       overflow: hidden;
+   }
+
+   .hero::before {
+       content: '';
+       position: absolute;
+       top: 0;
+       left: 0;
+       right: 0;
+       bottom: 0;
+       background: rgba(0, 0, 0, 0.4);
+       z-index: 1;
+   }
+
+   .hero-content {
+       position: relative;
+       z-index: 2;
+       animation: fadeInUp 1s ease-out;
+   }
+
+   .hero h1 {
+       font-size: 3.5rem;
+       margin-bottom: 1rem;
+       font-weight: 700;
+       background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+   }
+
+   .hero .subtitle {
+       font-size: 1.5rem;
+       margin-bottom: 2rem;
+       font-weight: 300;
+       opacity: 0.9;
+   }
+
+   .hero .description {
+       font-size: 1.2rem;
+       margin-bottom: 3rem;
+       max-width: 800px;
+       margin-left: auto;
+       margin-right: auto;
+       opacity: 0.8;
+   }
+
+   .cta-buttons {
+       display: flex;
+       gap: 20px;
+       justify-content: center;
+       flex-wrap: wrap;
+   }
+
+   .btn {
+       padding: 15px 30px;
+       border: none;
+       border-radius: 50px;
+       font-size: 1.1rem;
+       font-weight: 600;
+       text-decoration: none;
+       transition: all 0.3s ease;
+       cursor: pointer;
+       display: inline-block;
+   }
+
+   .btn-primary {
+       background: linear-gradient(45deg, #ff6b6b, #ff8e8e);
+       color: white;
+       box-shadow: 0 10px 30px rgba(255, 107, 107, 0.3);
+   }
+
+   .btn-primary:hover {
+       transform: translateY(-3px);
+       box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+   }
+
+   .btn-secondary {
+       background: transparent;
+       color: white;
+       border: 2px solid white;
+   }
+
+   .btn-secondary:hover {
+       background: white;
+       color: #667eea;
+       transform: translateY(-3px);
+   }
+
+   .section {
+       padding: 100px 0;
+       background: white;
+   }
+
+   .section-title {
+       text-align: center;
+       font-size: 2.5rem;
+       margin-bottom: 3rem;
+       color: #333;
+       position: relative;
+   }
+
+   .section-title::after {
+       content: '';
+       position: absolute;
+       bottom: -10px;
+       left: 50%;
+       transform: translateX(-50%);
+       width: 80px;
+       height: 4px;
+       background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+   }
+
+   .about-grid {
+       display: grid;
+       grid-template-columns: 1fr 2fr;
+       gap: 50px;
+       align-items: center;
+   }
+
+   .about-text {
+       font-size: 1.1rem;
+       line-height: 1.8;
+   }
+
+   .highlight {
+       background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+       -webkit-background-clip: text;
+       -webkit-text-fill-color: transparent;
+       background-clip: text;
+       font-weight: 600;
+   }
+
+   .skills-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+       gap: 30px;
+       margin-top: 50px;
+   }
+
+   .skill-card {
+       background: #f8f9fa;
+       padding: 30px;
+       border-radius: 15px;
+       text-align: center;
+       transition: transform 0.3s ease, box-shadow 0.3s ease;
+       border: 1px solid #e9ecef;
+   }
+
+   .skill-card:hover {
+       transform: translateY(-10px);
+       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+   }
+
+   .skill-icon {
+       width: 60px;
+       height: 60px;
+       margin: 0 auto 20px;
+       background: linear-gradient(45deg, #667eea, #764ba2);
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       color: white;
+       font-size: 24px;
+   }
+
+   .projects-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+       gap: 30px;
+       margin-top: 50px;
+   }
+
+   .project-card {
+       background: white;
+       border-radius: 15px;
+       overflow: hidden;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+       transition: transform 0.3s ease;
+   }
+
+   .project-card:hover {
+       transform: translateY(-10px);
+   }
+
+   .project-image {
+       height: 200px;
+       background: linear-gradient(45deg, #667eea, #764ba2);
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       color: white;
+       font-size: 48px;
+   }
+
+   .project-content {
+       padding: 25px;
+   }
+
+   .project-title {
+       font-size: 1.3rem;
+       margin-bottom: 10px;
+       color: #333;
+   }
+
+   .project-tech {
+       color: #666;
+       font-size: 0.9rem;
+       margin-bottom: 15px;
+   }
+
+   .contact {
+       background: #f8f9fa;
+   }
+
+   .contact-grid {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+       gap: 30px;
+       text-align: center;
+   }
+
+   .contact-item {
+       padding: 30px;
+       background: white;
+       border-radius: 15px;
+       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+   }
+
+   .contact-icon {
+       width: 50px;
+       height: 50px;
+       margin: 0 auto 15px;
+       background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+       border-radius: 50%;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       color: white;
+       font-size: 20px;
+   }
+
+   .footer {
+       background: #333;
+       color: white;
+       text-align: center;
+       padding: 30px 0;
+   }
+
+   @keyframes fadeInUp {
+       from {
+           opacity: 0;
+           transform: translateY(30px);
+       }
+       to {
+           opacity: 1;
+           transform: translateY(0);
+       }
+   }
+
+   @media (max-width: 768px) {
+       .hero h1 {
+           font-size: 2.5rem;
+       }
+
+       .hero .subtitle {
+           font-size: 1.2rem;
+       }
+
+       .about-grid {
+           grid-template-columns: 1fr;
+           gap: 30px;
+       }
+
+       .cta-buttons {
+           flex-direction: column;
+           align-items: center;
+       }
+   }
+
+   .floating-elements {
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       overflow: hidden;
+       z-index: 0;
+   }
+
+   .floating-element {
+       position: absolute;
+       background: rgba(255, 255, 255, 0.1);
+       border-radius: 50%;
+       animation: float 6s ease-in-out infinite;
+   }
+
+   .floating-element:nth-child(1) {
+       width: 80px;
+       height: 80px;
+       top: 20%;
+       left: 10%;
+       animation-delay: 0s;
+   }
+
+   .floating-element:nth-child(2) {
+       width: 60px;
+       height: 60px;
+       top: 60%;
+       right: 10%;
+       animation-delay: 2s;
+   }
+
+   .floating-element:nth-child(3) {
+       width: 40px;
+       height: 40px;
+       top: 80%;
+       left: 20%;
+       animation-delay: 4s;
+   }
+
+   @keyframes float {
+       0%, 100% {
+           transform: translateY(0px);
+       }
+       50% {
+           transform: translateY(-20px);
+       }
+   }
+</style>
+```
+
+</head>
+<body>
+   <section class="hero">
+       <div class="floating-elements">
+           <div class="floating-element"></div>
+           <div class="floating-element"></div>
+           <div class="floating-element"></div>
+       </div>
+       <div class="container">
+           <div class="hero-content">
+               <h1>[Your Name]</h1>
+               <p class="subtitle">Senior Director → AI Innovator</p>
+               <p class="description">
+                   Bridging the gap between executive leadership and cutting-edge AI implementation.
+                   Building intelligent agents that solve real business problems with LangChain, LangGraph, and strategic vision.
+               </p>
+               <div class="cta-buttons">
+                   <a href="#projects" class="btn btn-primary">View My AI Projects</a>
+                   <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+               </div>
+           </div>
+       </div>
+   </section>
+
+```
+<section class="section" id="about">
+   <div class="container">
+       <h2 class="section-title">From Boardroom to Code</h2>
+       <div class="about-grid">
+           <div>
+               <img src="https://via.placeholder.com/400x500/667eea/ffffff?text=Professional+Photo" alt="Professional headshot" style="width: 100%; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+           </div>
+           <div class="about-text">
+               <p>After years as a <span class="highlight">Senior Director in Data Science</span>, I discovered something was missing: the ability to build truly intelligent systems that could automate the strategic thinking, not just the data processing.</p>
+
+               <p>While leading teams and creating countless PowerPoint decks, I was quietly experimenting with <span class="highlight">agentic AI, LangChain, and LangGraph</span> in my spare time. What started as curiosity became a passion for building AI agents that can actually solve complex business problems.</p>
+
+               <p>Now I'm combining my executive experience with hands-on AI development skills to help organizations implement AI strategically - not just technically. I understand both the <span class="highlight">C-suite concerns and the code</span> that makes it work.</p>
+
+               <p><strong>The result?</strong> AI solutions that actually get adopted, drive ROI, and solve real problems instead of just impressing technical teams.</p>
+           </div>
+       </div>
+   </div>
+</section>
+
+<section class="section" style="background: #f8f9fa;" id="skills">
+   <div class="container">
+       <h2 class="section-title">Unique Skill Combination</h2>
+       <div class="skills-grid">
+           <div class="skill-card">
+               <div class="skill-icon">🎯</div>
+               <h3>Executive Leadership</h3>
+               <p>Senior Director experience managing teams, budgets, and strategic initiatives. I understand what executives need to hear and how to get buy-in for AI projects.</p>
+           </div>
+           <div class="skill-card">
+               <div class="skill-icon">🤖</div>
+               <h3>Agentic AI Development</h3>
+               <p>Hands-on experience building intelligent agents with LangChain, LangGraph, and Claude Code. Creating AI that can think, plan, and execute complex workflows.</p>
+           </div>
+           <div class="skill-card">
+               <div class="skill-icon">📊</div>
+               <h3>Data Science Foundation</h3>
+               <p>Deep experience in data analysis, statistical modeling, and business intelligence. The perfect foundation for building data-driven AI solutions.</p>
+           </div>
+           <div class="skill-card">
+               <div class="skill-icon">🚀</div>
+               <h3>Business Implementation</h3>
+               <p>I've seen too many AI projects fail because they ignored business realities. I build AI that actually works in corporate environments.</p>
+           </div>
+       </div>
+   </div>
+</section>
+
+<section class="section" id="projects">
+   <div class="container">
+       <h2 class="section-title">AI Projects Portfolio</h2>
+       <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; color: #666;">
+           Each project combines technical innovation with real business value
+       </p>
+       <div class="projects-grid">
+           <div class="project-card">
+               <div class="project-image">🧠</div>
+               <div class="project-content">
+                   <h3 class="project-title">Business Intelligence Agent</h3>
+                   <p class="project-tech">LangGraph • Python • RAG • SQL</p>
+                   <p>An AI agent that automatically generates business insights from multiple data sources, creates executive summaries, and identifies trending KPIs - eliminating hours of manual report creation.</p>
+               </div>
+           </div>
+           <div class="project-card">
+               <div class="project-image">📋</div>
+               <div class="project-content">
+                   <h3 class="project-title">Document Analysis RAG System</h3>
+                   <p class="project-tech">LangChain • Vector DB • NLP</p>
+                   <p>Enterprise-grade RAG system that processes legal documents, contracts, and policies. Answers complex questions across thousands of documents with source citations and confidence scores.</p>
+               </div>
+           </div>
+           <div class="project-card">
+               <div class="project-image">⚡</div>
+               <div class="project-content">
+                   <h3 class="project-title">Cost Optimization Agent</h3>
+                   <p class="project-tech">Multi-Agent • API Integration • Analytics</p>
+                   <p>Multi-agent system that automatically identifies cost-saving opportunities across cloud infrastructure, vendor contracts, and operational processes - based on real challenges I faced as a director.</p>
+               </div>
+           </div>
+       </div>
+   </div>
+</section>
+
+<section class="section contact" id="contact">
+   <div class="container">
+       <h2 class="section-title">Let's Build Something Amazing</h2>
+       <p style="text-align: center; font-size: 1.1rem; margin-bottom: 50px; color: #666;">
+           Whether you need AI strategy, implementation, or a leader who can do both
+       </p>
+       <div class="contact-grid">
+           <div class="contact-item">
+               <div class="contact-icon">💼</div>
+               <h3>LinkedIn</h3>
+               <p>Connect for professional opportunities and AI insights</p>
+               <a href="https://linkedin.com/in/[your-profile]" style="color: #667eea; text-decoration: none; font-weight: 600;">View Profile</a>
+           </div>
+           <div class="contact-item">
+               <div class="contact-icon">📧</div>
+               <h3>Email</h3>
+               <p>Let's discuss your AI implementation challenges</p>
+               <a href="mailto:[your-email]" style="color: #667eea; text-decoration: none; font-weight: 600;">[your-email]</a>
+           </div>
+           <div class="contact-item">
+               <div class="contact-icon">⚡</div>
+               <h3>GitHub</h3>
+               <p>Explore my AI projects and technical implementations</p>
+               <a href="https://github.com/[your-username]" style="color: #667eea; text-decoration: none; font-weight: 600;">View Code</a>
+           </div>
+           <div class="contact-item">
+               <div class="contact-icon">📝</div>
+               <h3>Blog</h3>
+               <p>Read about AI strategy from a business leader's perspective</p>
+               <a href="#" style="color: #667eea; text-decoration: none; font-weight: 600;">Latest Posts</a>
+           </div>
+       </div>
+   </div>
+</section>
+
+<footer class="footer">
+   <div class="container">
+       <p>&copy; 2025 [Your Name]. Building the future of AI in business.</p>
+   </div>
+</footer>
+
+<script>
+   // Smooth scrolling for navigation links
+   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+       anchor.addEventListener('click', function (e) {
+           e.preventDefault();
+           document.querySelector(this.getAttribute('href')).scrollIntoView({
+               behavior: 'smooth'
+           });
+       });
+   });
+
+   // Add scroll animation for skill cards
+   const observerOptions = {
+       threshold: 0.1,
+       rootMargin: '0px 0px -50px 0px'
+   };
+
+   const observer = new IntersectionObserver((entries) => {
+       entries.forEach(entry => {
+           if (entry.isIntersecting) {
+               entry.target.style.animationDelay = `${Math.random() * 0.5}s`;
+               entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+           }
+       });
+   }, observerOptions);
+
+   document.querySelectorAll('.skill-card, .project-card').forEach(card => {
+       observer.observe(card);
+   });
+</script>
+```
+
+</body>
+</html>
