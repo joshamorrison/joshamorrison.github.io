@@ -1,2 +1,2 @@
 # joshamorrison.github.io
-Professional AI Portfolio Website
+Portfolio Website
