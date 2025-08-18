@@ -206,9 +206,11 @@
    .project-card {
        background: white;
        border-radius: 15px;
-       overflow: hidden;
        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
        transition: transform 0.3s ease;
+       display: flex;
+       flex-direction: column;
+       min-height: 400px;
    }
 
    .project-card:hover {
@@ -223,10 +225,22 @@
        justify-content: center;
        color: white;
        font-size: 48px;
+       flex-shrink: 0;
    }
 
    .project-content {
        padding: 25px;
+       display: flex;
+       flex-direction: column;
+       height: 100%;
+   }
+
+   .project-description {
+       flex-grow: 1;
+   }
+
+   .project-button {
+       margin-top: auto;
    }
 
    .project-title {
@@ -439,20 +453,31 @@
            <div class="project-card">
                <div class="project-image">💰</div>
                <div class="project-content">
-                   <h3 class="project-title">Media Mix Modeling & Optimization</h3>
-                   <p class="project-tech">Python • R • AWS SageMaker • MLflow • Apache Airflow</p>
-                   <p>Advanced media mix models and econometric forecasting to optimize campaign spend and channel allocation. Incorporates real-time performance data and predictive analytics to maximize ROI.</p>
-                   <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📊 +18% ROAS • 12% lower CAC • Optimized cross-channel allocation</p>
+                   <div class="project-description">
+                       <h3 class="project-title">Media Mix Modeling & Optimization</h3>
+                       <p class="project-tech">Python • R • dbt • AWS SageMaker • MLflow • Apache Airflow</p>
+                       <p>Advanced media mix models and econometric forecasting to optimize campaign spend and channel allocation. Uses dbt for multi-source data transformation and attribution modeling. Incorporates real-time performance data and predictive analytics to maximize ROI.</p>
+                       <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📊 +18% ROAS • 12% lower CAC • Optimized cross-channel allocation</p>
+                   </div>
+                   <div class="project-button">
+                       <a href="https://github.com/joshamorrison/public/tree/main/media-mix-modeling" 
+                          target="_blank" 
+                          style="display: inline-block; background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                          🔗 View Implementation
+                       </a>
+                   </div>
                </div>
            </div>
            <div class="project-card">
                <div class="project-image">🔮</div>
                <div class="project-content">
-                   <h3 class="project-title">Generative-Enhanced Econometric Forecasting Platform</h3>
-                   <p class="project-tech">R • Python • AWS • LangChain • LangSmith • Apache Airflow</p>
-                   <p>Combines rigorous econometric modeling with generative AI to produce accurate forecasts, scenario simulations, and executive-ready narratives. Traditional time-series and causal inference methods are paired with LLM-based agents for automated sensitivity testing and plain-language reporting.</p>
-                   <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📈 95% forecast accuracy • 2x scenario evaluation speed • Actionable strategy recommendations</p>
-                   <div style="margin-top: 20px;">
+                   <div class="project-description">
+                       <h3 class="project-title">Generative-Enhanced Econometric Forecasting Platform</h3>
+                       <p class="project-tech">R • Python • AWS • LangChain • LangSmith • Apache Airflow</p>
+                       <p>Combines rigorous econometric modeling with generative AI to produce accurate forecasts, scenario simulations, and executive-ready narratives. Traditional time-series and causal inference methods are paired with LLM-based agents for automated sensitivity testing and plain-language reporting.</p>
+                       <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📈 95% forecast accuracy • 2x scenario evaluation speed • Actionable strategy recommendations</p>
+                   </div>
+                   <div class="project-button">
                        <a href="https://github.com/joshamorrison/public/tree/main/generative-econometric-forecasting" 
                           target="_blank" 
                           style="display: inline-block; background: linear-gradient(45deg, #667eea, #764ba2); color: white; padding: 10px 20px; border-radius: 25px; text-decoration: none; font-weight: 600; font-size: 0.9rem; transition: transform 0.3s ease, box-shadow 0.3s ease;">
@@ -464,37 +489,45 @@
            <div class="project-card">
                <div class="project-image">🤝</div>
                <div class="project-content">
-                   <h3 class="project-title">Multi-Agent Orchestration Platform</h3>
-                   <p class="project-tech">Python • LangGraph • LangSmith • AWS Bedrock</p>
-                   <p>Framework for building and deploying scalable agentic AI systems with dynamic tool usage and adaptive workflows. Supports hierarchical and parallel agent topologies, monitored through LangSmith for performance, traceability, and iterative refinement. Integrated with AWS Bedrock for foundation model access and domain-specific fine-tuning.</p>
-                   <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">🤝 30% faster decision cycles • 25% productivity gain • 40% reduction in manual workflows</p>
+                   <div class="project-description">
+                       <h3 class="project-title">Multi-Agent Orchestration Platform</h3>
+                       <p class="project-tech">Python • LangGraph • LangSmith • AWS Bedrock</p>
+                       <p>Framework for building and deploying scalable agentic AI systems with dynamic tool usage and adaptive workflows. Supports hierarchical and parallel agent topologies, monitored through LangSmith for performance, traceability, and iterative refinement. Integrated with AWS Bedrock for foundation model access and domain-specific fine-tuning.</p>
+                       <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">🤝 30% faster decision cycles • 25% productivity gain • 40% reduction in manual workflows</p>
+                   </div>
                </div>
            </div>
            <div class="project-card">
                <div class="project-image">🔍</div>
                <div class="project-content">
-                   <h3 class="project-title">Market & Customer Intelligence Platform</h3>
-                   <p class="project-tech">Python • LangChain • LangGraph • ChromaDB • AWS</p>
-                   <p>Unified intelligence platform for customer feedback and competitive market data. Uses RAG with ChromaDB for semantic search and LangGraph/LangChain agents for sentiment tracking, trend detection, and opportunity mapping.</p>
-                   <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📊 Real-time insight delivery • 20% faster GTM decisions • 15% revenue lift in targeted markets</p>
+                   <div class="project-description">
+                       <h3 class="project-title">Market & Customer Intelligence Platform</h3>
+                       <p class="project-tech">Python • LangChain • LangGraph • ChromaDB • AWS</p>
+                       <p>Unified intelligence platform for customer feedback and competitive market data. Uses RAG with ChromaDB for semantic search and LangGraph/LangChain agents for sentiment tracking, trend detection, and opportunity mapping.</p>
+                       <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📊 Real-time insight delivery • 20% faster GTM decisions • 15% revenue lift in targeted markets</p>
+                   </div>
                </div>
            </div>
            <div class="project-card">
                <div class="project-image">🧠</div>
                <div class="project-content">
-                   <h3 class="project-title">Customer Lifetime Value & Churn Prediction</h3>
-                   <p class="project-tech">Python • LangChain • AWS • GitHub • Apache Airflow</p>
-                   <p>Predictive modeling system that identifies at-risk customers and estimates long-term value. Automates retention strategies through LangChain agents triggering personalized campaigns and offers.</p>
-                   <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📈 25% retention improvement • $2.5M churn prevention • 92% prediction accuracy</p>
+                   <div class="project-description">
+                       <h3 class="project-title">Customer Lifetime Value & Churn Prediction</h3>
+                       <p class="project-tech">Python • LangChain • AWS • GitHub • Apache Airflow</p>
+                       <p>Predictive modeling system that identifies at-risk customers and estimates long-term value. Automates retention strategies through LangChain agents triggering personalized campaigns and offers.</p>
+                       <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">📈 25% retention improvement • $2.5M churn prevention • 92% prediction accuracy</p>
+                   </div>
                </div>
            </div>
            <div class="project-card">
                <div class="project-image">🤖</div>
                <div class="project-content">
-                   <h3 class="project-title">AutoML Agent</h3>
-                   <p class="project-tech">Python • LangSmith • CrewAI • AWS SageMaker Autopilot</p>
-                   <p>End-to-end automated machine learning pipeline for EDA, feature engineering, model selection, and hyperparameter tuning. CrewAI orchestrates task-specific agents while LangSmith tracks experiments and model performance.</p>
-                   <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">🤖 70% reduction in model development time • 15% accuracy improvement • Continuous optimization</p>
+                   <div class="project-description">
+                       <h3 class="project-title">AutoML Agent</h3>
+                       <p class="project-tech">Python • LangSmith • CrewAI • AWS SageMaker Autopilot</p>
+                       <p>End-to-end automated machine learning pipeline for EDA, feature engineering, model selection, and hyperparameter tuning. CrewAI orchestrates task-specific agents while LangSmith tracks experiments and model performance.</p>
+                       <p class="project-tech" style="margin-top: 15px; font-weight: 600; color: #333;">🤖 70% reduction in model development time • 15% accuracy improvement • Continuous optimization</p>
+                   </div>
                </div>
            </div>
        </div>
