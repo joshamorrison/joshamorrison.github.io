@@ -648,7 +648,8 @@
    // Track project implementation button clicks
    document.querySelectorAll('a[href*="github.com"]').forEach(link => {
        link.addEventListener('click', function() {
-           const projectName = this.closest('.project-card').querySelector('.project-title').textContent;
+           const projectCard = this.closest('.project-card');
+           const projectName = projectCard ? projectCard.querySelector('.project-title')?.textContent : 'Unknown Project';
            console.log('GA Event: view_project', projectName);
            if (typeof gtag !== 'undefined') {
              gtag('event', 'view_project', {
