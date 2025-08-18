@@ -669,11 +669,30 @@
        link.addEventListener('click', function() {
            const contactType = this.href.includes('mailto') ? 'email' : 'linkedin';
            console.log('GA Event: contact_attempt', contactType);
-           gtag('event', 'contact_attempt', {
-               'contact_method': contactType,
-               'event_category': 'Lead Generation',
-               'event_label': 'Contact Interaction'
-           });
+           if (typeof gtag !== 'undefined') {
+             gtag('event', 'contact_attempt', {
+                 'contact_method': contactType,
+                 'event_category': 'Lead Generation',
+                 'event_label': 'Contact Interaction'
+             });
+           } else {
+             console.log('gtag not available for contact_attempt event');
+           }
+       });
+   });
+
+   // Track blog clicks
+   document.querySelectorAll('a[href="blog/index.html"]').forEach(link => {
+       link.addEventListener('click', function() {
+           console.log('GA Event: blog_visit');
+           if (typeof gtag !== 'undefined') {
+             gtag('event', 'blog_visit', {
+                 'event_category': 'Content',
+                 'event_label': 'Blog Section Visit'
+             });
+           } else {
+             console.log('gtag not available for blog_visit event');
+           }
        });
    });
 
