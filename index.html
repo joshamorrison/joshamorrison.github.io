@@ -9,7 +9,12 @@
      function gtag(){dataLayer.push(arguments);}
      gtag('js', new Date());
 
-     gtag('config', 'G-N6MYLNKMDN');
+     gtag('config', 'G-N6MYLNKMDN', {
+       debug_mode: true
+     });
+
+     // Debug logging to console
+     console.log('Google Analytics initialized with ID: G-N6MYLNKMDN');
    </script>
    
    <meta charset="UTF-8">
@@ -621,6 +626,7 @@
    document.querySelectorAll('a[href*="github.com"]').forEach(link => {
        link.addEventListener('click', function() {
            const projectName = this.closest('.project-card').querySelector('.project-title').textContent;
+           console.log('GA Event: view_project', projectName);
            gtag('event', 'view_project', {
                'project_name': projectName,
                'link_url': this.href,
@@ -634,6 +640,7 @@
    document.querySelectorAll('a[href^="mailto:"], a[href*="linkedin.com"]').forEach(link => {
        link.addEventListener('click', function() {
            const contactType = this.href.includes('mailto') ? 'email' : 'linkedin';
+           console.log('GA Event: contact_attempt', contactType);
            gtag('event', 'contact_attempt', {
                'contact_method': contactType,
                'event_category': 'Lead Generation',
