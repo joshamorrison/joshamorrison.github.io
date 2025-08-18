@@ -591,6 +591,29 @@
 </footer>
 
 <script>
+   // Test basic console logging first
+   console.log('Page JavaScript loaded');
+   
+   // Check if gtag is available
+   function checkGoogleAnalytics() {
+     if (typeof gtag !== 'undefined') {
+       console.log('Google Analytics gtag function is available');
+       return true;
+     } else {
+       console.log('Google Analytics gtag function is NOT available');
+       return false;
+     }
+   }
+   
+   // Check immediately
+   checkGoogleAnalytics();
+   
+   // Check again after a short delay in case it's still loading
+   setTimeout(() => {
+     console.log('Checking GA after 2 second delay...');
+     checkGoogleAnalytics();
+   }, 2000);
+
    // Smooth scrolling for navigation links
    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
        anchor.addEventListener('click', function (e) {
@@ -627,12 +650,16 @@
        link.addEventListener('click', function() {
            const projectName = this.closest('.project-card').querySelector('.project-title').textContent;
            console.log('GA Event: view_project', projectName);
-           gtag('event', 'view_project', {
-               'project_name': projectName,
-               'link_url': this.href,
-               'event_category': 'Portfolio',
-               'event_label': 'GitHub Project View'
-           });
+           if (typeof gtag !== 'undefined') {
+             gtag('event', 'view_project', {
+                 'project_name': projectName,
+                 'link_url': this.href,
+                 'event_category': 'Portfolio',
+                 'event_label': 'GitHub Project View'
+             });
+           } else {
+             console.log('gtag not available for view_project event');
+           }
        });
    });
 
